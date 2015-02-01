@@ -1,0 +1,10 @@
+android/ATTR_MINIFY=true
+android/ATTR_PROJECT_NAME=Carlos Flappy Bird Ninja
+android/abi=armeabi
+android/distribute_path=/Users/peachpellen/Desktop
+android/keystore_alias=testkey
+android/keystore_password=Carlos101
+android/keystore_path=/Users/peachpellen/Desktop/Peach/Android/testkey
+android/recent_output=/Users/peachpellen/Desktop
+android/sdk_version=2.3.3
+eclipse.preferences.version=1
