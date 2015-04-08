@@ -1,8 +1,8 @@
-#appname: ParticleDice
-#publisher: peachpellen
-#url: http://
-#image: appicon.png
-#appid: com.peach.platino
-#desc: undefined
-#type: ipad
-#guid: 234125f0-3c26-447a-b2d9-ab89cb6fc263
+#appname:ParticleDice
+#publisher:Peach Pellen
+#url:http://peachpellen.com
+#image:appicon.png
+#appid:com.platino.particledice
+#desc:Roll a random number and see a randomized particle effect
+#type:ipad
+#guid:234125f0-3c26-447a-b2d9-ab89cb6fc263

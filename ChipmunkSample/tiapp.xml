@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>co.lanica.platino.samples.chipmunk</id>
-    <name>ChipmunkSample</name>
+    <id>com.platino.chipmunk</id>
+    <name>Chipmunk Physics</name>
     <version>1.0</version>
-    <publisher>Lanica, Inc.</publisher>
-    <url>http://lanica.co</url>
-    <description>Lanica PLATINO Chipmunk2d physics sample.</description>
-    <copyright>2013 by Lanica, Inc.</copyright>
+    <publisher>Black Gate Games, Inc</publisher>
+    <url>http://platino.io/</url>
+    <description>Platino Chipmunk2d physics sample.</description>
+    <copyright>2015 by Black Gate Games, Inc</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -52,6 +52,6 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.5.0.GA</sdk-version>
+    <sdk-version>4.0.0.Beta2</sdk-version>
     <property name="ti.deploytype">test</property>
 </ti:app>

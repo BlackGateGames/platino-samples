@@ -7,14 +7,14 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>3.1.1</sdk-version>
-    <id>co.lanica.alloy.codestrong.tank</id>
+    <sdk-version>4.0.0.Beta2</sdk-version>
+    <id>com.platino.codestrongtank</id>
     <name>TheTank</name>
     <version>1.0</version>
-    <publisher>Lanica, Inc.</publisher>
-    <url>http://lanica.co/</url>
-    <description>not specified</description>
-    <copyright>2012 by iguchi</copyright>
+    <publisher>Black Gate Games, Inc.</publisher>
+    <url>http://platino.io/</url>
+    <description>Shown by Lanica at Codestrong 2012</description>
+    <copyright>2012 by Kota Iguchi</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -35,12 +35,11 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-		<tool-api-level>19</tool-api-level>
-		<manifest>
-			<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
-		</manifest>
-	</android>
-
+        <tool-api-level>19</tool-api-level>
+        <manifest>
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
+        </manifest>
+    </android>
     <mobileweb>
         <precache/>
         <splash>
@@ -53,7 +52,6 @@
         <module platform="android">co.lanica.platino</module>
         <module platform="iphone">co.lanica.platino</module>
         <module platform="android">co.lanica.almixer</module>
-		<module platform="iphone">co.lanica.almixer</module>
-	</modules>
-    <sdk-version>3.2.0.GA</sdk-version>
+        <module platform="iphone">co.lanica.almixer</module>
+    </modules>
 </ti:app>

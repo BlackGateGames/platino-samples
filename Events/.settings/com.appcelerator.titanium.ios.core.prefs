@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+iosLaunchConfigurationAttributes/ATTR_MINIFY=true
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=Events
+iosLaunchConfigurationAttributes/appid=com.platino.events
+iosLaunchConfigurationAttributes/certificate=Gemma Tyndall (W288D7K4SA)
+iosLaunchConfigurationAttributes/distribute_path=/Users/peachpellen/Desktop
+iosLaunchConfigurationAttributes/keychain=
+iosLaunchConfigurationAttributes/output_format=ipa
+iosLaunchConfigurationAttributes/sdk_version=8.2
+iosLaunchConfigurationAttributes/uuid=48a3b8f3-564e-4a47-a037-7d25b59b0b2d

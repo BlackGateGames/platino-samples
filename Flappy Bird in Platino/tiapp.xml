@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.jankenpo.flappy</id>
+    <id>com.platino.flappy</id>
     <name>Flappy Bird Clone</name>
     <version>1.0</version>
-    <publisher>Carlos</publisher>
-    <url>http://jankenpo.net</url>
-    <description>Flappy Bird Clone</description>
-    <copyright>2014 by Carlos</copyright>
+    <publisher>Peach and Carlos</publisher>
+    <url>http://platino.io</url>
+    <description>Flappy Bird Clone in Platino</description>
+    <copyright>2014 by Peach and Carlos</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -61,5 +61,5 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.2.0.GA</sdk-version>
+    <sdk-version>4.0.0.Beta2</sdk-version>
 </ti:app>

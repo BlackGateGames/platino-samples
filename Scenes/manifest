@@ -1,9 +1,9 @@
 #appname:Scenes
-#appid:co.lanica.platino.samples.scenes
+#appid:com.platino.scenes
 #type:mobile
 #guid:eb16ae26-1d04-45ed-b388-af95de20e434
 #version:1.0
-#publisher:Lanica, Inc.
-#url:http://lanica.co
+#publisher:Black Gate Games, Inc.
+#url:http://platino.io
 #image:appicon.png
 #desc:Demonstrates use of Platino Scene instances.

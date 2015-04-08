@@ -1,9 +1,9 @@
-#appname: GenericIsometricTileMapTest
-#appid: co.lanica.platino.sample.genericisometrictilemap
-#type: mobile
-#guid: 36b71001-1931-4e00-81db-84b72542a864
-#version: 1.0
-#publisher: not specified
-#url: not specified
-#image: appicon.png
-#desc: not specified
+#appname:Isometric
+#appid:com.platino.isometric
+#type:mobile
+#guid:36b71001-1931-4e00-81db-84b72542a864
+#version:1.0
+#publisher:Black Gate Games, Inc
+#url:http://platino.io
+#image:appicon.png
+#desc:Isometric sample for Platino

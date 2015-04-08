@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.peach.platino</id>
+    <id>com.platino.jukebox</id>
     <name>Jukebox</name>
     <version>1.0</version>
     <publisher>Black Gate Games, LLC</publisher>
-    <url>http://lanica.co/</url>
-    <description>Simple Jukebox by ALmixer</description>
+    <url>http://platino.io</url>
+    <description>ALmixer Jukebox</description>
     <copyright>2015 by Black Gate Games, Inc.</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
@@ -59,5 +59,5 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.5.0.GA</sdk-version>
+    <sdk-version>4.0.0.Beta2</sdk-version>
 </ti:app>

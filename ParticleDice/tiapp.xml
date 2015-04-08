@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.peach.platino</id>
-    <name>ParticleDice</name>
+    <id>com.platino.particledice</id>
+    <name>Particle Dice</name>
     <version>1.0</version>
-    <publisher>peachpellen</publisher>
-    <url>http://</url>
-    <description/>
-    <copyright>2015 by peachpellen</copyright>
+    <publisher>Peach Pellen</publisher>
+    <url>http://peachpellen.com</url>
+    <description>Roll a random number and see a randomized particle effect</description>
+    <copyright>2015 by Peach Pellen</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -58,5 +58,5 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.4.1.GA</sdk-version>
+    <sdk-version>4.0.0.Beta2</sdk-version>
 </ti:app>

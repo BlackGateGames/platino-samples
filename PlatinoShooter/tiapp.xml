@@ -7,14 +7,14 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>3.1.1</sdk-version>
-    <id>co.lanica.platino.shooter</id>
-    <name>AlloyShooter</name>
+    <sdk-version>4.0.0.Beta2</sdk-version>
+    <id>com.platino.platinoshooter</id>
+    <name>Platino Shooter</name>
     <version>1.0</version>
-    <publisher>iguchi</publisher>
-    <url>http://lanica.co</url>
-    <description>not specified</description>
-    <copyright>2012 by iguchi</copyright>
+    <publisher>Black Gate Games, Inc</publisher>
+    <url>http://platino.io</url>
+    <description>A simple shooter game made with Platino</description>
+    <copyright>2015 by Black Gate Games, Inc</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -49,5 +49,4 @@
         <module platform="android">co.lanica.platino</module>
         <module platform="iphone">co.lanica.platino</module>
     </modules>
-    <sdk-version>3.2.0.GA</sdk-version>
 </ti:app>
