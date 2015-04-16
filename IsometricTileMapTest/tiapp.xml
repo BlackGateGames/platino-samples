@@ -31,8 +31,13 @@
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
-    <mobileweb>
+ <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <tool-api-level>21</tool-api-level>
+        <manifest>
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
+        </manifest>
+    </android>
+<mobileweb>
         <precache/>
         <splash>
             <enabled>true</enabled>

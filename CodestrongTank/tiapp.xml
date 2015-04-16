@@ -35,9 +35,9 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <tool-api-level>19</tool-api-level>
+        <tool-api-level>21</tool-api-level>
         <manifest>
-            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
         </manifest>
     </android>
     <mobileweb>

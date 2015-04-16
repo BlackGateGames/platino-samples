@@ -7,7 +7,7 @@
     <url>http://platino.io</url>
     <description>Demonstrates use of Platino Transform objects to create animated transitions.</description>
     <copyright>2015 by Black Gate Games, Inc.</copyright>
-    <icon>Icon.png</icon>
+    <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>

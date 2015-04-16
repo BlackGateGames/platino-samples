@@ -7,7 +7,7 @@
     <url>http://platino.io</url>
     <description>Demonstrates use of Platino events.</description>
     <copyright>2013 by Lanica, Inc</copyright>
-    <icon>Icon.png</icon>
+    <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>

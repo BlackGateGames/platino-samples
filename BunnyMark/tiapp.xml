@@ -7,7 +7,7 @@
     <url>http://platino.io/</url>
     <description>Platino edition of the legendary BunnyMark performance test.</description>
     <copyright>2015 Black Gate Games</copyright>
-    <icon>Icon.png</icon>
+    <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
