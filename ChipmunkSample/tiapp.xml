@@ -42,7 +42,6 @@
         <module platform="iphone">co.lanica.platino</module>
         <module platform="iphone">co.lanica.chipmunk2d</module>
         <module platform="android">co.lanica.chipmunk2d</module>
-        <module platform="commonjs">co.lanica.chipmunk2d.debugdraw</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

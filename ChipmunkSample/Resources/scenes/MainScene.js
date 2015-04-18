@@ -6,24 +6,6 @@ require('co.lanica.chipmunk2d');
 var chipmunk = co_lanica_chipmunk2d;
 var v = chipmunk.cpv;
 
-var DebugDraw = require("co.lanica.chipmunk2d.debugdraw");
-// DebugDraw options: 
-// 
-// BB = draw bounding box
-// Circle = draw circle shape
-// Vertex = draw polygon vertex
-// Poly = draw polygon shape
-// Constraint = draw constraint anchor
-// ConstraintConnection = draw constraint connection between bodies
-//
-// Methods:
-// DebugDraw.addBody(body)
-// DebugDraw.removeBody(body)
-// DebugDraw.addBodies(arrayOfBodies)
-// DebugDraw.removeBodies(arrayOfBodies)
-//
-
-
 var MainScene = function(window, game) {
 	var scene = platino.createScene();
 	scene.color(0.85, 0.96, 0.96);
@@ -47,9 +29,6 @@ var MainScene = function(window, game) {
 	var pConstraint2 = [];
 	var pConstraint3 = [];
 	var _accumulator = 0.0;
-
-	var debugDraw = new DebugDraw(platino, chipmunk, game, scene, {BB:false, Circle:true, Vertex:false, Poly:true, Constraint:true, ConstraintConnection:true});
-	debugDraw.active = false;
 	
 	// chipmunk y-coordinates are reverse value of platino's, so use the following
 	// function to convert chipmunk y-coordinate values to platino y-coordinates and vice versa
@@ -247,11 +226,6 @@ var MainScene = function(window, game) {
 				pSprites[i].angle = angle;
 			}
 		}
-
-		if ((debugDraw != null) && (debugDraw.active)) {
-			debugDraw.update();
-		}
-
 	};
 
 	var stepPhysics = function(delta) {
@@ -273,17 +247,9 @@ var MainScene = function(window, game) {
 		syncSpritesWithPhysics();
 	};
 
-	// touch listener for the screen (turn debug draw on)
-	var onScreenTouch = function() {
-		debugDraw.active = true;
-	};
-	
 	var onSceneActivated = function(e) {
-		
 		// Create chipmunk space
 		space = chipmunk.cpSpaceNew();
-		//data = new chipmunk.cpSpaceAddCollisionHandlerContainer();
-		//chipmunk.cpSpaceAddCollisionHandler(space, 0, 0, begin, preSolve, postSolve, separate, data);
 		chipmunk.cpSpaceSetGravity(space, v(0, -200));
 		chipmunk.cpSpaceSetSleepTimeThreshold(space, 0.5);
 		chipmunk.cpSpaceSetCollisionSlop(space, 0.5);
@@ -307,40 +273,18 @@ var MainScene = function(window, game) {
 			y: 0
 		}));
 
-		// add message to let user know they can touch the screen to activate debug draw
-		var message = platino.createTextSprite({
-			text: 'Tap screen to activate debug draw.',
-			fontSize: 16,
-			x: 25,
-			y: 25
-		});
-		var messageSize = message.sizeWithText(message.text);
-		message.width = messageSize.width;
-		message.height = messageSize.height;
-		message.color(1.0, 1.0, 1.0);
-		message.hide();
-		scene.add(message);
-		
-
 		createGroundAndWalls();
 		createSpritesMomentsBodiesAndShapes();
-
-		if (debugDraw !== null) {
-			debugDraw.addBodies(pBodies);
-		}
 		
 		// wait 3 seconds after the scene loads and start the game loop
 		setTimeout(function() {
 			game.addEventListener('enterframe', update);
-			game.addEventListener('touchstart', onScreenTouch);
-			message.show();
 		}, 3000);
 	};
 
 	// scene 'deactivated' event listener function (scene exit-point)
 	var onSceneDeactivated = function(e) {
 		game.removeEventListener('enterframe', update);
-		game.removeEventListener('touchstart', onScreenTouch);
 		scene.dispose();
 	};
 
