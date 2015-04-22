@@ -1,13 +1,6 @@
 Events Sample Code
 
-Demonstrates event listeners in Platino. Learn how to direct touch events to individual sprites, and how to listen to game and scene-specific events.
-
-APIs covered:
-
-* sprite.addEventListener() (Individual Sprite Touch Events)
-* game.addEventListener() (Global screen touch events)
-* scene.addEventListener() (activation/deactivation of scenes)
-* platino.createSprite()
+Demonstrates event listeners in Platino.
 
 **Video:**
 

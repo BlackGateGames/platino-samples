@@ -10,7 +10,6 @@ function MainScene(window, game) {
 
     // Create scene
     var self = platino.createScene();
-    //self.color(0.41, 0.61, 0.12); // Make this scene background green
     self.color(1, 1, 1); // Make this scene background green
 
     var tileMapManager = null;

@@ -2,7 +2,6 @@ var platino = require('co.lanica.platino');
 
 //Application Window Component Constructor
 function ApplicationWindow() {
-
     var leftCurtain  = null;
     var rightCurtain = null;
 

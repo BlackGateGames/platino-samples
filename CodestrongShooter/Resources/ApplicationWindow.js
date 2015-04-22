@@ -48,9 +48,6 @@ function ApplicationWindow() {
         updateScreenSize();
     });
     
-    game.touchScaleX = 1;
-    game.touchScaleY = 1;
-    
     // set screen size for your game (ipad size)
     game.TARGET_SCREEN = {width:1536, height:2048};
 
@@ -63,10 +60,7 @@ function ApplicationWindow() {
         // Note: game.size.width and height may be changed due to the parent layout so check them here.
         Ti.API.info("view size: " + game.size.width + "x" + game.size.height);
         Ti.API.info("game screen size: " + game.screen.width + "x" + game.screen.height);
-    
-        game.touchScaleX = game.screen.width  / game.size.width;
-        game.touchScaleY = game.screen.height / game.size.height;
-
+ 
         game.screenScale = game.screen.height / game.TARGET_SCREEN.height;
 
         updateCurtain();

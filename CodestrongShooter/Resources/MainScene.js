@@ -66,10 +66,7 @@ function MainScene(window, game) {
      * Move our ship at the center of the touch-event position
      * Move the background a bit, that causes parallized effect
      */
-    var touchstart = function(_e) {
-        var e =  {type:_e.type, source:_e.source};
-        e.x = _e.x * game.touchScaleX;
-        e.y = _e.y * game.touchScaleY;
+    var touchstart = function(e) {
 
         myship.clearTransform(myshipMover);
 
@@ -151,7 +148,7 @@ function MainScene(window, game) {
 
         createUpdateTimer();
 
-        game.addEventListener('touchstart', touchstart);
+        self.addEventListener('touchstart', touchstart);
 
 		// loop infinitely
 		ALmixer.PlayChannel(propellerSound, -1);
@@ -161,8 +158,6 @@ function MainScene(window, game) {
 
     self.addEventListener('deactivated', function(e) {
         Ti.API.info("main scene is deactivated");
-
-        game.removeEventListener('touchstart', touchstart);
     });
 
     var groundMoverStarted = function(e) {

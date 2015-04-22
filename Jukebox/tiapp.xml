@@ -32,19 +32,8 @@
         <tool-api-level>21</tool-api-level>
         <manifest>
             <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
-            <application android:debuggable="false"
-                android:icon="@drawable/appicon" android:label="Jukebox"
-                android:name="JukeboxApplication" android:theme="@android:style/Theme.Holo.Light"/>
         </manifest>
     </android>
-    <mobileweb>
-        <precache/>
-        <splash>
-            <enabled>true</enabled>
-            <inline-css-images>true</inline-css-images>
-        </splash>
-        <theme>default</theme>
-    </mobileweb>
     <modules>
         <module platform="android">co.lanica.platino</module>
         <module platform="iphone">co.lanica.platino</module>

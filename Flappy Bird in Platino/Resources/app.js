@@ -1,5 +1,10 @@
 // Create the app window
-var window = Ti.UI.createWindow();
+var window = Ti.UI.createWindow({
+		orientationModes: [Ti.UI.PORTRAIT],
+		fullscreen: true,
+		navBarHidden: true,
+		exitOnClose:true
+	});
 
 // Require Platino and Chipmunk2d
 var platino = require('co.lanica.platino');
@@ -154,16 +159,7 @@ var updateScreenSize = function() {
 		width: game.size.width / screenScale,
 		height: game.size.height / screenScale,
 	};
-
-	game.touchScaleX = game.screen.width  / game.size.width;
-	game.touchScaleY = game.screen.height / game.size.height;
 	game.screenScale = game.screen.height / game.TARGET_SCREEN.height;
-		
-	Ti.API.info(game.TARGET_SCREEN);
-	Ti.API.info(game.screen);
-	Ti.API.info(game.touchScaleX);
-	Ti.API.info(game.touchScaleY);
-	Ti.API.info(game.screenScale);
 };
 
 // Create the pipes
@@ -185,9 +181,6 @@ var createPipes = function(){
 		});
 		game.setupSpriteSize(sprite.up[i]);
 		scene.add(sprite.up[i]);
-
-
-			
 		sprite.down[i] = platino.createSpriteSheet({
 		  	asset:'images/sprites.xml', 
 		  	frame: 68,

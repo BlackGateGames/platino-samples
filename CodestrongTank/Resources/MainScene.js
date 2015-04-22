@@ -130,20 +130,6 @@ function MainScene(window, game) {
         }
     }
 
-    /*
-    ** fix touch coordinates because parent view may have different scale and camera
-    **/
-    function locationInView(_e) {
-        var e = {type:_e.type, source:_e.source};
-        var x = _e.x * game.touchScaleX;
-        var y = _e.y * game.touchScaleY;
-        
-        e.x = x;
-        e.y = y;
-        
-        return e;
-    }
-
     var tankMovingBulletTransformCompleted = function(e) {
         var index = e.source.index;
         var x = tankMovingBullet[index].center.x;
@@ -389,7 +375,7 @@ function MainScene(window, game) {
 
 	var stopTankMovingAudioLoop = function (index) {
 		// If the tank was playing a moving sound, we want to stop that specific sound now.
-		var playing_channel = tankMovingCurrentPlayingChannel[index]
+		var playing_channel = tankMovingCurrentPlayingChannel[index];
 		// There is the possibility that so many sounds were playing at the same time (i.e. more than 32),
 		// that PlayChannel refused to play and returned -1. Don't do anything in the -1 case.
 		if(playing_channel > -1) {
@@ -397,11 +383,9 @@ function MainScene(window, game) {
 			// reset the value to -1 to represent no sound is playing
 			tankMovingCurrentPlayingChannel[index] = -1;
 		}
-	}
+	};
 
-    var aim = function(_e) {
-        var e = locationInView(_e);
-
+    var aim = function(e) {
         var frameCount = rotateTankAndTurret(e, myTankIndex);
         var param = {x:tank[myTankIndex].center.x, y:tank[myTankIndex].center.y};
 
@@ -417,16 +401,11 @@ function MainScene(window, game) {
         return {x:fromX + (amount * Math.cos(r)), y:fromY + (amount * Math.sin(r))};
     }
 
-    var handleTouchEvent = function(_e) {
-        var e = locationInView(_e);
-
-        if (e.type == "touchstart") {
-            if (buttonA.contains(e.x, e.y)) {
-                buttonA.color(0.5, 0.5, 0.5);
-                return;
-            }
-
-        } else if (e.type == "touchend") {
+    var handleTouchEvent = function(e) {
+    	// The button handles itself thanks to sprite touch events
+    	if (buttonA.contains(e.x, e.y)) {
+    		return;
+    	} else if (e.type == "touchend") {
             buttonA.color(1, 1, 1);
 
             if (buttonA.contains(e.x, e.y)) {
@@ -489,8 +468,8 @@ function MainScene(window, game) {
         // INIT PUBNUB
         // -------------------------------------
         pubnub = require('pubnub').init({
-            publish_key   : YOUR_PUBNUB_PUBLISH_KEY_HERE,
-            subscribe_key : YOUR_PUBNUB_SUBSCRIBE_KEY_HERE,
+            publish_key   : "pub-e6b78369-c1a6-4e49-b1fd-97f1b6e59588",
+            subscribe_key : "sub-38a0dc47-2b1a-11e0-adf0-07ce8d84040b",
             ssl           : false,
             origin        : 'pubsub.pubnub.com'
         });
@@ -637,6 +616,24 @@ function MainScene(window, game) {
         buttonA.x = game.screen.width  - buttonA.width;
         buttonA.y = game.screen.height - buttonA.height;
         buttonA.z = 99;
+        
+        buttonA.addEventListener('touchstart', function(e) {
+        	buttonA.color(0.5, 0.5, 0.5);
+        });
+        
+        buttonA.addEventListener('touchend', function(e) {
+            buttonA.color(1, 1, 1);
+            var param = {x:tank[myTankIndex].center.x, y:tank[myTankIndex].center.y, frame:tank[myTankIndex].frame};
+            send_a_message("fire", {tank:myTankIndex,
+                    frame:tank[myTankIndex].frame,
+                    x:param.x,
+                    y:param.y,
+                    offsetX:myOffsetX,
+                    offsetY:myOffsetY
+                });
+            movetank(param, myTankIndex);
+            fire(myTankIndex, param);
+        });
 
         self.add(buttonA);
 
@@ -838,8 +835,8 @@ function MainScene(window, game) {
             checkCollision();
         }, 100);
 
-        game.addEventListener('touchstart', handleTouchEvent);
-        game.addEventListener('touchend',   handleTouchEvent);
+        self.addEventListener('touchstart', handleTouchEvent);
+        self.addEventListener('touchend',   handleTouchEvent);
     });
 
     self.addEventListener('onloadsprite', function(e) {
@@ -853,10 +850,6 @@ function MainScene(window, game) {
 
     self.addEventListener('deactivated', function(e) {
         Ti.API.info("main scene is deactivated");
-
-        game.removeEventListener('touchstart', handleTouchEvent);
-        game.removeEventListener('touchend',   handleTouchEvent);
-
         self.remove(map);
         map = null;
 

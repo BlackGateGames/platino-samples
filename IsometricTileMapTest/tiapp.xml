@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.platino.isometric</id>
-    <name>Isometric</name>
+    <name>IsometricTileMapTest</name>
     <version>1.0</version>
     <publisher>Black Gate Games, Inc</publisher>
     <url>http://platino.io</url>
     <description>Isometric sample for Platino</description>
-    <copyright>2013 by Black Gate Games, Inc</copyright>
+    <copyright>2015 by Black Gate Games, Inc</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
@@ -31,13 +31,30 @@
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
- <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <tool-api-level>21</tool-api-level>
-        <manifest>
-            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:installLocation="auto" package="com.platino.isometric" android:versionCode="1" android:versionName="1">
+            <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21"/>
+			<application android:icon="@drawable/appicon" android:label="IsometricTileMapTest" android:name="IsometrictilemaptestApplication" android:debuggable="true">
+				<activity android:name=".IsometrictilemaptestActivity" android:label="IsometricTileMapTest" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation">
+					<intent-filter>
+						<action android:name="android.intent.action.MAIN"/>
+						<category android:name="android.intent.category.LAUNCHER"/>
+					</intent-filter>
+				</activity>
+				<activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation"/>
+				<activity android:name="org.appcelerator.titanium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent"/>
+				<activity android:name="org.appcelerator.titanium.TiModalActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent"/>
+				<activity android:name="ti.modules.titanium.ui.TiTabActivity" android:configChanges="keyboardHidden|orientation"/>
+				<activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+				<service android:name="org.appcelerator.titanium.analytics.TiAnalyticsService" android:exported="false"/>
+			</application>
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.INTERNET"/>
         </manifest>
     </android>
-<mobileweb>
+    <mobileweb>
         <precache/>
         <splash>
             <enabled>true</enabled>
@@ -57,5 +74,5 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>4.0.0.Beta2</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
 </ti:app>

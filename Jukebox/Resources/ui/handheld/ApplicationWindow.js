@@ -28,25 +28,43 @@ function ApplicationWindow() {
 
 	//create component instance
 	var self = Ti.UI.createWindow({
-		backgroundColor:'#fff'
+		backgroundColor:'#222'
 	});
+	if (Ti.Platform.osname == 'android') {
+		self.addEventListener('open', function(e) {
+    		self.activity.actionBar.hide();
+		});
+	}
 		
 	//construct UI
 	var view = Ti.UI.createView({layout:'vertical', top:20, width:Ti.UI.FILL, height:Ti.UI.FILL});
-	var headerLabel = Ti.UI.createLabel({text:'Jukebox', color:'#000'});
+	var headerLabel = Ti.UI.createLabel({text:'Jukebox', color:'#ccc', font: { fontSize:"42sp" }});
 	var tableRows = [];
 
 	var files = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory).getDirectoryListing();
 	for (var i = 0; i < files.length; i++) {
 		if (SUPPORTED_AUDIO_FORMAT[getExtention(files[i])]) {
-			tableRows.push({title:files[i]});
+			var rowView = Ti.UI.createTableViewRow();
+			var label = Ti.UI.createLabel({
+                text:files[i],
+                width: Ti.UI.FILL,
+                height: "50dp",
+                align: "left",
+                left: "15dp",
+                font: {fontSize:"20dp"}
+            });
+            if (Ti.Platform.osname == 'android') {label.height = "100dp";}
+            rowView.add(label);
+			tableRows.push(rowView);
 		}
 	}
 
 	var tableView = Ti.UI.createTableView({data:tableRows});
+	//tableView.rowHeight = 300;
 
 	tableView.addEventListener('click', function(e) {
 			Ti.API.info("click");
+			//Ti.API.info(e.source);
 		
 		if (currentPlayingAudioData !== null) {
 			Ti.API.info("HaltChannel");
@@ -63,13 +81,18 @@ function ApplicationWindow() {
 			// Remember to release your references in JavaScript to the audio handle.
 			currentPlayingAudioData = null;
 		}
-		var filename = e.source.title.toString();
+		if (e.source.children[0]) {
+			var filename = e.source.children[0].text.toString();
+		}
+		else {
+			var filename = e.source.text.toString();
+		}
 		Ti.API.info("Loading file: '" + filename + "' ");
 		currentPlayingAudioData = ALmixer.LoadStream(filename);
 		if (currentPlayingAudioData !== null) {
 			var res = ALmixer.PlayChannel(0, currentPlayingAudioData);
 			if (res < 0) {
-				alert("ALmixer.PlayChannel failed for " + e.source.title + " [" + res + "]\n" + ALmixer.GetError());
+				alert("ALmixer.PlayChannel failed for " + filename + " [" + res + "]\n" + ALmixer.GetError());
 			}
 		}
 	});

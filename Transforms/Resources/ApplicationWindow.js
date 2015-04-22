@@ -36,10 +36,7 @@ var platino = require('co.lanica.platino');
 		game.TARGET_SCREEN = {
 			width: 320,
 			height: screenHeight
-		}
-
-		game.touchScaleX = 1;
-		game.touchScaleY = 1;
+		};
 
 		// Updates screen scale
 		var updateScreenSize = function() {
@@ -48,10 +45,6 @@ var platino = require('co.lanica.platino');
 				width: game.size.width / screenScale,
 				height: game.size.height / screenScale
 			};
-
-			game.touchScaleX = game.screen.width  / game.size.width;
-			game.touchScaleY = game.screen.height / game.size.height;
-			game.screenScale = game.screen.height / game.TARGET_SCREEN.height;
 		};
 
 		// Loads MainScene.js as starting point to the app
@@ -70,13 +63,6 @@ var platino = require('co.lanica.platino');
 				game.orientation = e.orientation;
 				updateScreenSize();
 		});
-
-		// Convenience function to convert Titanium coordinate from a Platino coordinate
-		game.getTiScale = function(x, y) {
-			return {
-				x: (x / game.touchScaleX),
-				y:(y / game.touchScaleY) }
-		}
 
 		// Free up game resources when window is closed
 		window.addEventListener('close', function(e) {

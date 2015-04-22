@@ -17,5 +17,5 @@ if (Ti.version < 1.8 ) {
 // This is a single context application with multiple windows in a stack
 (function() {
 	var Window = require('ui/handheld/ApplicationWindow');
-	new Window().open({exitOnClose:true, fullscreen:false});
+	new Window().open({exitOnClose:true, fullscreen:false, navBarHidden: true});
 })();

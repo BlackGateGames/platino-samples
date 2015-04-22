@@ -7,30 +7,13 @@
 		var blue = null,
 			red = null,
 			green = null;
-
-		var touchable = [];
-
+			
+		// Report touch events here
 		var onSpriteTouch = function(e) {
 			Ti.API.info(e.source.name + ' fired a touch event with type: ' + e.type);
 		};
-
 		
-		var onScreenTouch = function(e) {
-			var i, eventData;
-
-			for (i=0; i < touchable.length; i++) {
-				if (touchable[i].contains(e.x, e.y)) {
-					eventData = {
-						x: e.x,
-						y: e.y
-					};
-					touchable[i].fireEvent(e.type, eventData);
-				}
-			}
-		};
-
 		var onSceneActivated = function(e) {
-
 			// ---- create sprites, add listeners, etc. ----
 
 			Ti.API.info("MainScene has been activated.");
@@ -65,7 +48,7 @@
 			scene.add(blue);
 			scene.add(red);
 			scene.add(green);
-
+			
 			// add touch events to sprites
 			blue.addEventListener('touchstart', onSpriteTouch);
 			blue.addEventListener('touchend', onSpriteTouch);
@@ -73,15 +56,6 @@
 			red.addEventListener('touchend', onSpriteTouch);
 			green.addEventListener('touchstart', onSpriteTouch);
 			green.addEventListener('touchend', onSpriteTouch);
-
-			// add sprites to the 'touchable' array
-			touchable.push(blue);
-			touchable.push(red);
-			touchable.push(green);
-
-			// add touch event listener to the screen (which is responsible for redistributing touches to individual sprites)
-			game.addEventListener('touchstart', onScreenTouch);
-			game.addEventListener('touchend', onScreenTouch);
 		};
 
 		var onSceneDeactivated = function(e) {
@@ -89,10 +63,7 @@
 			// ---- remove sprites, listeners, etc. ----
 
 			Ti.API.info("MainScene has been deactivated.");
-
-			game.removeEventListener('touchstart', onScreenTouch);
-			game.removeEventListener('touchend', onScreenTouch);
-
+			
 			if (blue) {
 				scene.remove(blue);
 				blue.removeEventListener('touchstart', onSpriteTouch);
@@ -104,14 +75,14 @@
 				scene.remove(red);
 				red.removeEventListener('touchstart', onSpriteTouch);
 				red.removeEventListener('touchend', onSpriteTouch);
-				red = null
+				red = null;
 			}
 
 			if (green) {
 				scene.remove(green);
 				green.removeEventListener('touchstart', onSpriteTouch);
 				green.removeEventListener('touchend', onSpriteTouch);
-				green = null
+				green = null;
 			}
 
 			touchable = null;
