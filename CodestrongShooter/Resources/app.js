@@ -3,7 +3,7 @@ if (Ti.version < 1.8 ) {
     alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');
 }
 
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 var ALmixer = platino.require('co.lanica.almixer');
 
 // Create a global object that other modules can read/write from

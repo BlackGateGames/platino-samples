@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+iosLaunchConfigurationAttributes/ATTR_MINIFY=true
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=Raycasting 3D Test
+iosLaunchConfigurationAttributes/appid=com.platino.raycasting
+iosLaunchConfigurationAttributes/certificate=Gemma Tyndall (W288D7K4SA)
+iosLaunchConfigurationAttributes/distribute_path=/Users/peachpellen/iOS_Builds
+iosLaunchConfigurationAttributes/keychain=
+iosLaunchConfigurationAttributes/output_format=ipa
+iosLaunchConfigurationAttributes/sdk_version=8.3
+iosLaunchConfigurationAttributes/uuid=2c263548-f381-40c7-8341-04b5562c755f

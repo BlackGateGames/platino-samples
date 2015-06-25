@@ -1,7 +1,7 @@
 
 (function() {
     var IsometricTileManager;
-    var platino = require('co.lanica.platino');
+    var platino = require('io.platino');
 
     function isDefined(value) {
         return (value !== null && value !== undefined);

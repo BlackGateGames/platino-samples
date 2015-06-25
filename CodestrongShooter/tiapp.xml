@@ -8,7 +8,7 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>4.0.0.Beta2</sdk-version>
+    <sdk-version>4.0.0.GA</sdk-version>
     <id>com.platino.codestrongshooter</id>
     <name>Codestrong Shooter</name>
     <version>1.0</version>
@@ -50,9 +50,9 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android">co.lanica.platino</module>
-        <module platform="iphone">co.lanica.platino</module>
         <module platform="android">co.lanica.almixer</module>
         <module platform="iphone">co.lanica.almixer</module>
+        <module platform="iphone">io.platino</module>
+        <module platform="android">io.platino</module>
     </modules>
 </ti:app>

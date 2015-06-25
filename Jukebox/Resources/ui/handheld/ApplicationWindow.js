@@ -1,4 +1,4 @@
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 // Use platino.require(), not regular require(), to load ALmixer. (platino.require has extra magic)
 var ALmixer = platino.require('co.lanica.almixer');
 

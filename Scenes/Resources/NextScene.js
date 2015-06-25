@@ -1,5 +1,5 @@
 (function() {
-	var platino = require('co.lanica.platino');
+	var platino = require('io.platino');
 
 	var NextScene = function(window, game) {
 		var scene = platino.createScene();

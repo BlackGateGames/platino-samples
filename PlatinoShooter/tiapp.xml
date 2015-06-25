@@ -46,7 +46,7 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android">co.lanica.platino</module>
-        <module platform="iphone">co.lanica.platino</module>
+        <module platform="iphone">io.platino</module>
+        <module platform="android">io.platino</module>
     </modules>
 </ti:app>

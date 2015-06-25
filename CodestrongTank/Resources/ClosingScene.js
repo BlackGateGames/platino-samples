@@ -1,7 +1,7 @@
 /*
  * Closing scene ensures all other scenes are 'deactivated' before closing window
  */
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 
 function ClosingScene(window, game) {
     var self = platino.createScene();

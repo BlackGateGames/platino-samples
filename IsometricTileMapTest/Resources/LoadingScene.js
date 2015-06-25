@@ -1,7 +1,7 @@
 /*
  * Loading Scene
  */
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 
 function LoadingScene(window, game) {
     var self = platino.createScene();

@@ -50,8 +50,8 @@
     <modules>
         <module platform="iphone">co.lanica.chipmunk2d</module>
         <module platform="android">co.lanica.chipmunk2d</module>
-        <module platform="android">co.lanica.platino</module>
-        <module platform="iphone">co.lanica.platino</module>
+        <module platform="iphone">io.platino</module>
+        <module platform="android">io.platino</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -61,5 +61,5 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>4.0.0.Beta2</sdk-version>
+    <sdk-version>4.0.0.GA</sdk-version>
 </ti:app>

@@ -16,7 +16,7 @@ var window = Ti.UI.createWindow({backgroundColor:'black',
 });
 
 // Obtain module and create game view
-var alloy = require('co.lanica.platino');
+var alloy = require('io.platino');
 var game = alloy.createGameView();
 
 game.debug = true;

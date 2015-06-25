@@ -1,4 +1,4 @@
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 // Note: Yes, the module loading technique is a little different in this case.
 // Instead of using a return value, a global variable called co_lanica_chipmunk2d was registered.
 // We can alias that with a local variable called chipmunk for brevity.

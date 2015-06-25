@@ -1,7 +1,7 @@
 /*
  * Loading Scene
  */
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 
 function LoadingScene(window, game) {
     var self = platino.createScene();
@@ -70,8 +70,8 @@ function LoadingScene(window, game) {
 
         if (progressBar === null) {
             progressBar = Titanium.UI.createProgressBar({
-                width :  loadingScreen.width * 0.3 / game.touchScaleX,
-                height : loadingScreen.height * 0.2 / game.touchScaleY,
+                width :  loadingScreen.width * 0.08 / game.touchScaleX,
+                height : loadingScreen.height * 0.07 / game.touchScaleY,
                 min : 0,
                 max : loadingTextures.length,
                 value : 0,

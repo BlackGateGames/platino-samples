@@ -6,7 +6,7 @@
 var window = Ti.UI.createWindow({backgroundColor:'black'});
 
 // Require Platino, create the game view as always, then set the game color if you wish. (I made it black.)
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 var game = platino.createGameView();
 game.color(0, 0, 0);
 

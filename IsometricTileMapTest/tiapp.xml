@@ -32,26 +32,38 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:installLocation="auto" package="com.platino.isometric" android:versionCode="1" android:versionName="1">
+        <manifest android:installLocation="auto" android:versionCode="1"
+            android:versionName="1" package="com.platino.isometric">
             <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21"/>
-			<application android:icon="@drawable/appicon" android:label="IsometricTileMapTest" android:name="IsometrictilemaptestApplication" android:debuggable="true">
-				<activity android:name=".IsometrictilemaptestActivity" android:label="IsometricTileMapTest" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation">
-					<intent-filter>
-						<action android:name="android.intent.action.MAIN"/>
-						<category android:name="android.intent.category.LAUNCHER"/>
-					</intent-filter>
-				</activity>
-				<activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation"/>
-				<activity android:name="org.appcelerator.titanium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent"/>
-				<activity android:name="org.appcelerator.titanium.TiModalActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent"/>
-				<activity android:name="ti.modules.titanium.ui.TiTabActivity" android:configChanges="keyboardHidden|orientation"/>
-				<activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
-				<service android:name="org.appcelerator.titanium.analytics.TiAnalyticsService" android:exported="false"/>
-			</application>
-			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-			<uses-permission android:name="android.permission.INTERNET"/>
+            <application android:debuggable="true"
+                android:icon="@drawable/appicon"
+                android:label="IsometricTileMapTest" android:name="IsometrictilemaptestApplication">
+                <activity
+                    android:configChanges="keyboardHidden|orientation"
+                    android:label="IsometricTileMapTest"
+                    android:name=".IsometrictilemaptestActivity" android:theme="@style/Theme.Titanium">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                </activity>
+                <activity
+                    android:configChanges="keyboardHidden|orientation" android:name="org.appcelerator.titanium.TiActivity"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation"
+                    android:name="org.appcelerator.titanium.TiTranslucentActivity" android:theme="@android:style/Theme.Translucent"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation"
+                    android:name="org.appcelerator.titanium.TiModalActivity" android:theme="@android:style/Theme.Translucent"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation" android:name="ti.modules.titanium.ui.TiTabActivity"/>
+                <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+                <service android:exported="false" android:name="org.appcelerator.titanium.analytics.TiAnalyticsService"/>
+            </application>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
         </manifest>
     </android>
     <mobileweb>
@@ -63,8 +75,8 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android">co.lanica.platino</module>
-        <module platform="iphone">co.lanica.platino</module>
+        <module platform="iphone">io.platino</module>
+        <module platform="android">io.platino</module>
     </modules>
     <deployment-targets>
         <target device="tizen">false</target>
@@ -74,5 +86,5 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.5.1.GA</sdk-version>
+    <sdk-version>4.0.0.GA</sdk-version>
 </ti:app>

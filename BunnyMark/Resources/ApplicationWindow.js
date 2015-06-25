@@ -1,4 +1,4 @@
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 
 (function() {
 	var ApplicationWindow = function() {

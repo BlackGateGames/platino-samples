@@ -1,0 +1,8 @@
+".container": {
+	backgroundColor:'black'
+}
+
+"#win": {
+	orientationModes: "[Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT]"
+}
+

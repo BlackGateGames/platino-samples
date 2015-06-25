@@ -1,8 +1,10 @@
 eclipse.preferences.version=1
 iosLaunchConfigurationAttributes/ATTR_MINIFY=true
-iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=PlatinoTest
-iosLaunchConfigurationAttributes/appid=com.platino.tests
-iosLaunchConfigurationAttributes/certificate=Joseph Austin (KBRU4G93EN)
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=TouchEvent
+iosLaunchConfigurationAttributes/appid=com.platino.touchevent
+iosLaunchConfigurationAttributes/certificate=Gemma Tyndall (W288D7K4SA)
+iosLaunchConfigurationAttributes/distribute_path=/Users/peachpellen/iOS_Builds
 iosLaunchConfigurationAttributes/keychain=
-iosLaunchConfigurationAttributes/sdk_version=8.2
-iosLaunchConfigurationAttributes/uuid=76ee3610-2105-4ec7-a694-140e62e123b9
+iosLaunchConfigurationAttributes/output_format=ipa
+iosLaunchConfigurationAttributes/sdk_version=8.3
+iosLaunchConfigurationAttributes/uuid=2c263548-f381-40c7-8341-04b5562c755f

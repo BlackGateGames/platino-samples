@@ -7,7 +7,7 @@ var window = Ti.UI.createWindow({
 	});
 
 // Require Platino and Chipmunk2d
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 require('co.lanica.chipmunk2d');
 var chipmunk = co_lanica_chipmunk2d;
 var v = chipmunk.cpv;

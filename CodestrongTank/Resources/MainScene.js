@@ -1,7 +1,7 @@
 /*
  * Tank game example
  */
-var platino = require('co.lanica.platino');
+var platino = require('io.platino');
 var ALmixer = platino.require('co.lanica.almixer');
 
 function MainScene(window, game) {
