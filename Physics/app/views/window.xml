@@ -1,0 +1,7 @@
+<!--
+	This file contains the main Titanium Window behind your game. See window.tss for settings.
+-->
+
+<Alloy>
+	<Window id="win"/>
+</Alloy>

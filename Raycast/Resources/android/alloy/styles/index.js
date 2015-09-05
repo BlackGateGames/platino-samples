@@ -1,0 +1,1 @@
+module.exports = [{"isClass":true,"priority":10000.0002,"key":"container","style":{backgroundColor:"black",}},{"isId":true,"priority":100000.0003,"key":"win","style":{orientationModes:"[Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT]",}}];

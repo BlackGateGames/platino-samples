@@ -14,6 +14,7 @@ function ApplicationWindow() {
     
     //construct UI
     var game = platino.createGameView();
+    game.usePerspective = true;
     
     // update game view texture settings for smooth rendering
     game.textureFilter = platino.OPENGL_LINEAR;

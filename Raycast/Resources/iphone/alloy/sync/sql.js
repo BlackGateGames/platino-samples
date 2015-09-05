@@ -118,9 +118,9 @@ function Sync(method, model, opts) {
             if (!model.id) {
                 model.id = model.idAttribute === ALLOY_ID_DEFAULT ? guid() : null;
                 attrObj[model.idAttribute] = model.id;
-                "0.9.2" === backbone.VERSION ? model.set(attrObj, {
+                model.set(attrObj, {
                     silent: true
-                }) : model.set(attrObj);
+                });
             }
             var names = [], values = [], q = [];
             for (var k in columns) {
@@ -130,14 +130,21 @@ function Sync(method, model, opts) {
             }
             sql = "REPLACE INTO " + table + " (" + names.join(",") + ") VALUES (" + q.join(",") + ");";
             db = Ti.Database.open(dbName);
+            db.execute("BEGIN;");
             db.execute(sql, values);
             if (null === model.id) {
-                model.id = db.lastInsertRowId;
-                attrObj[model.idAttribute] = model.id;
-                "0.9.2" === backbone.VERSION ? model.set(attrObj, {
-                    silent: true
-                }) : model.set(attrObj);
+                var sqlId = "SELECT last_insert_rowid();";
+                var rs = db.execute(sqlId);
+                if (rs && rs.isValidRow()) {
+                    model.id = rs.field(0);
+                    attrObj[model.idAttribute] = model.id;
+                    model.set(attrObj, {
+                        silent: true
+                    });
+                } else Ti.API.warn("Unable to get ID from database for model: " + model.toJSON());
+                rs && rs.close();
             }
+            db.execute("COMMIT;");
             db.close();
             return model.toJSON();
         }();
@@ -150,22 +157,23 @@ function Sync(method, model, opts) {
         db = Ti.Database.open(dbName);
         var rs;
         rs = _.isString(sql) ? db.execute(sql) : db.execute(sql.statement, sql.params);
+        var len = 0;
         var values = [];
-        var fieldNames = [];
-        var fieldCount = _.isFunction(rs.fieldCount) ? rs.fieldCount() : rs.fieldCount;
-        var getField = rs.field;
-        var i = 0;
-        for (;fieldCount > i; i++) fieldNames.push(rs.fieldName(i));
         while (rs.isValidRow()) {
             var o = {};
-            for (i = 0; fieldCount > i; i++) o[fieldNames[i]] = getField(i);
+            var fc = 0;
+            fc = _.isFunction(rs.fieldCount) ? rs.fieldCount() : rs.fieldCount;
+            _.times(fc, function(c) {
+                var fn = rs.fieldName(c);
+                o[fn] = rs.fieldByName(fn);
+            });
             values.push(o);
+            len++;
             rs.next();
         }
         rs.close();
         db.close();
-        var len = values.length;
-        "0.9.2" === backbone.VERSION && (model.length = len);
+        model.length = len;
         resp = 1 === len ? values[0] : values;
         break;
 
@@ -174,6 +182,7 @@ function Sync(method, model, opts) {
         db = Ti.Database.open(dbName);
         db.execute(sql, model.id);
         db.close();
+        model.id = null;
         resp = model.toJSON();
     }
     if (resp) {
@@ -300,7 +309,7 @@ function installDatabase(config) {
     db.close();
 }
 
-var _ = require("alloy/underscore")._, backbone = require("alloy/backbone");
+var _ = require("alloy/underscore")._;
 
 var ALLOY_DB_DEFAULT = "_alloy_";
 

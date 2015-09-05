@@ -27,12 +27,11 @@ var Platino = require('io.platino');
 		game.fps = 30;
 		game.color(0, 0, 0);
 		game.debug = true;
+		game.usePerspective = true;
 		
 		var updateSceneName = function(e) {
 			label.text = (game.topScene() == game.scene1) ? "scene 1" : "scene 2";
 		};
-		
-	//	game.usePerspective = false;
 		
 		// Loads our scene, launches the game
 		game.addEventListener('onload', function(e) {

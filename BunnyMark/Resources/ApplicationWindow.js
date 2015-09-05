@@ -13,13 +13,7 @@ var platino = require('io.platino');
 		game.fps = 60;
 		game.color(1.0, 1.0, 1.0);
 		game.debug = false; // disables debug logs (not to be used for production)
-
-		// additional options:
-		//game.keepScreenOn = false;
-		//game.textureFilter = platino.OPENGL_LINEAR;
-		//game.setUsePerspective(false); // for isometric
-		//game.enableOnLoadSpriteEvent = false; // optimization: disables 'onloadsprite' and 'onunloadsprite' event except selected sprite by registerOnLoadSpriteName(name) or registerOnLoadSpriteTag(tag)
-		//game.enableOnLoadTextureEvent = false; // optimization: disables 'onloadtexture' event except selected texture by registerOnLoadTextureName(name)
+		game.orthographicMode = platino.ORTHOGRAPHIC_MODE_FIT;
 		game.enableOnFpsEvent = true; // optimization: disables 'onfps' event
 		game.onFpsInterval = 1000; // sets 'onfps' event interval in msec (default: 5000)
 		game.enableOnDrawFrameEvent = false; // optimization: disables 'enterframe' event
@@ -74,8 +68,8 @@ var platino = require('io.platino');
 		game.getTiScale = function(x, y) {
 			return {
 				x: (x / game.touchScaleX),
-				y:(y / game.touchScaleY) }
-		}
+				y:(y / game.touchScaleY) };
+		};
 
 		// Free up game resources when window is closed
 		window.addEventListener('close', function(e) {

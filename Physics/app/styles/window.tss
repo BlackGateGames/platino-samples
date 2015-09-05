@@ -1,0 +1,13 @@
+// This file provides a style sheet which sets up the window
+
+"#win": {
+	fullscreen:"true",
+	backgroundColor:'black',
+	orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT],
+	navbarHidden:"true",
+	top: 0,
+	left: 0,
+	height: '100%',
+	width: '100%',
+	exitOnClose:"true"
+}

@@ -22,6 +22,7 @@ var game = alloy.createGameView();
 game.debug = true;
 game.fps = 30;
 game.color(0, 0, 0);
+game.usePerspective = true;
 
 // Create scene
 var scene = alloy.createScene();
@@ -283,6 +284,7 @@ function initGameScreen() {
 var updateTimerID = 0;
 
 game.addEventListener('onload', function(e) {
+	
     initGameScreen();
     
     initMyShip();
@@ -319,7 +321,6 @@ window.addEventListener('android:back', function(e) {
  */
 game.addEventListener('touchstart', function(e) {
     myship.clearTransform(myshipMover);
-    
     myshipMover.x = e.x * touchScaleX;
     myshipMover.y = e.y * touchScaleY;
     myshipMover.easing = alloy.ANIMATION_CURVE_CUBIC_OUT;

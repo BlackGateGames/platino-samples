@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.platino.raycasting</id>
+    <id>com.blackgategames.raycasting</id>
     <name>Raycasting 3D Test</name>
     <version>1.0.0</version>
     <publisher>Black Gate Games</publisher>
@@ -63,7 +63,7 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>4.0.0.GA</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

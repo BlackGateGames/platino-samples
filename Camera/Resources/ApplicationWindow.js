@@ -13,16 +13,7 @@ var platino = require('io.platino');
 		game.fps = 30;
 		game.color(0, 0, 0);
 		game.debug = false; // disables debug logs (not to be used for production)
-
-		// additional options:
-		//game.keepScreenOn = false;
-		//game.textureFilter = platino.OPENGL_LINEAR;
-		//game.setUsePerspective(false); // for isometric
-		//game.enableOnDrawFrameEvent = false; // optimization: disables 'enterframe' event
-		//game.enableOnLoadSpriteEvent = false; // optimization: disables 'onloadsprite' and 'onunloadsprite' event except selected sprite by registerOnLoadSpriteName(name) or registerOnLoadSpriteTag(tag)
-		//game.enableOnLoadTextureEvent = false; // optimization: disables 'onloadtexture' event except selected texture by registerOnLoadTextureName(name)
-		//game.enableOnFpsEvent = false; // optimization: disables 'onfps' event
-		//game.onFpsInterval = 5000; // sets 'onfps' event interval in msec (default: 5000)
+		game.usePerspective = true;
 
 		// Set your target screen resolution (in points) below
 		var screenHeight = Ti.Platform.displayCaps.platformHeight;
@@ -35,7 +26,7 @@ var platino = require('io.platino');
 		game.TARGET_SCREEN = {
 			width: 320,
 			height: screenHeight
-		}
+		};
 
 		game.touchScaleX = 1;
 		game.touchScaleY = 1;
@@ -74,8 +65,8 @@ var platino = require('io.platino');
 		game.getTiScale = function(x, y) {
 			return {
 				x: (x / game.touchScaleX),
-				y:(y / game.touchScaleY) }
-		}
+				y:(y / game.touchScaleY) };
+		};
 
 		// Free up game resources when window is closed
 		window.addEventListener('close', function(e) {
