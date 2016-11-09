@@ -17,7 +17,7 @@ var WINDOW_SCALE_FACTOR_X = 1;
 var WINDOW_SCALE_FACTOR_Y = 1;
 
 // Set the initial variables for the game
-var worldSpeed = 4;
+var worldSpeed = 8;
 var birdAngle = 0;
 var bounce = false;
 var bounceX = 0;
@@ -96,14 +96,14 @@ var animPos = 0;
 var flyBird;
 
 // Variables for defining target device width and height
-var targetWidth = 288;
-var targetHeight = 512;
+var targetWidth = 576;
+var targetHeight = 1024;
 
 // Set the game's target screen size
 game.TARGET_SCREEN = {
 	width: targetWidth,
 	height: targetHeight,
-	difference: Titanium.Platform.displayCaps.platformHeight - 480,
+	difference: Titanium.Platform.displayCaps.platformHeight - 960,
 };
 
 // Used to get the height of the game screen, minus the bird's Y
@@ -169,8 +169,8 @@ var createPipes = function(){
 		sprite.up[i] = platino.createSpriteSheet({
 		  	asset:'images/sprites.xml', 
 		  	frame: 66,
-		  	y: -(100+(Math.random(0,10)*200)),
-		  	x:480 + (i*160),
+		  	y: -(150+(Math.random()*350)),
+		  	x: 960 + (i*320),
 		  	index: i,
 		  	z:1,
 		  	ready: true,
@@ -184,7 +184,7 @@ var createPipes = function(){
 		sprite.down[i] = platino.createSpriteSheet({
 		  	asset:'images/sprites.xml', 
 		  	frame: 68,
-		  	y: (sprite.up[i].y + sprite.up[i].height) + 100,
+		  	y: (sprite.up[i].y + sprite.up[i].height) + 200,
 		  	x: sprite.up[i].x,
 		  	index: i,
 		  	z:1,
@@ -230,8 +230,8 @@ game.syncSprites = function(){
 		// Move the floor
 		floor[0].x = floor[0].x - worldSpeed;
 		floor[1].x = floor[1].x - worldSpeed;
-		if((floor[0].x+floor[0].width) < 0) floor[0].x = 333;
-		if((floor[1].x+floor[1].width) < 0) floor[1].x = 333;
+		if((floor[0].x+floor[0].width) < 0) floor[0].x = 664;
+		if((floor[1].x+floor[1].width) < 0) floor[1].x = 664;
 	}
 		
 			
@@ -284,11 +284,11 @@ game.syncSprites = function(){
 			sprite.down[i].x = sprite.up[i].x;
 				
 			if((sprite.up[i].x+sprite.up[i].width)<0) {
-				sprite.up[i].x = 430;
+				sprite.up[i].x = 860;
 				sprite.down[i].x = sprite.up[i].x;
 				
-				sprite.up[i].y = -(100+(Math.random(0,10)*200));
-				sprite.down[i].y = (sprite.up[i].y+sprite.up[i].height) + 100;
+				sprite.up[i].y = -(150+(Math.random()*350));
+				sprite.down[i].y = (sprite.up[i].y+sprite.up[i].height) + 200;
 				sprite.up[i].ready = true;
 			}
 			
@@ -304,7 +304,7 @@ game.syncSprites = function(){
 			}
 				
 			// Bam! Hit a pipe
-			if(sprite.up[i].collidesWith(sprite.bird) === true || sprite.down[i].collidesWith(sprite.bird)) 
+			if(sprite.up[i].collidesWith(sprite.bird) === true || sprite.down[i].collidesWith(sprite.bird) === true) 
 			{
 				die = true;
 				pow.stop();
@@ -362,7 +362,7 @@ scene.addEventListener('activated', function(){
 	game.setupSpriteSize(background);
 	scene.add(background);
 	
-	var background2 = platino.createSpriteSheet({asset:'images/sprites.xml', frame:39, x:288, y:0 });
+	var background2 = platino.createSpriteSheet({asset:'images/sprites.xml', frame:39, x:576, y:0 });
 	game.setupSpriteSize(background2);
 	scene.add(background2);
 		
@@ -381,7 +381,7 @@ scene.addEventListener('activated', function(){
 	  	asset:'images/sprites.xml', 
 	  	frame: 2,
 	  	y: game.TARGET_SCREEN.height- 95,
-	  	x: 336,
+	  	x: 664,
 	  	ready: true,
 	  	z:5,
 	});

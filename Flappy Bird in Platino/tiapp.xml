@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.platino.flappy</id>
+    <id>io.platino.flappy</id>
     <name>Flappy Bird Clone</name>
-    <version>1.0</version>
+    <version>1.1</version>
     <publisher>Peach and Carlos</publisher>
     <url>http://platino.io</url>
     <description>Flappy Bird Clone in Platino</description>
-    <copyright>2014 by Peach and Carlos</copyright>
+    <copyright>2016 by Peach and Carlos</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>add79da6-3ac7-4625-ad27-379d36066a5e</guid>
+    <guid>1ade1145-d86d-4017-9000-c889682a973a</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -55,11 +55,9 @@
     </modules>
     <deployment-targets>
         <target device="android">true</target>
-        <target device="blackberry">false</target>
         <target device="ipad">true</target>
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
-        <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>4.0.0.Beta2</sdk-version>
+    <sdk-version>5.5.1.GA</sdk-version>
 </ti:app>

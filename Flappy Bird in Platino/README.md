@@ -3,4 +3,4 @@ This Platino sample code is licensed under the provisions also known as the MIT 
 
 [http://platino.io/sample-code-license](http://platino.io/sample-code-license)
 
-Copyright © 2015 Black Gate Games, LLC. All Rights Reserved.
+Copyright © 2016 Black Gate Games, LLC. All Rights Reserved.
