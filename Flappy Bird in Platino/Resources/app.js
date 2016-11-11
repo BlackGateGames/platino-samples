@@ -230,8 +230,8 @@ game.syncSprites = function(){
 		// Move the floor
 		floor[0].x = floor[0].x - worldSpeed;
 		floor[1].x = floor[1].x - worldSpeed;
-		if((floor[0].x+floor[0].width) < 0) floor[0].x = 664;
-		if((floor[1].x+floor[1].width) < 0) floor[1].x = 664;
+		if((floor[0].x+floor[0].width) < 0) {floor[0].x = floor[1].x + floor[0].width;}
+		if((floor[1].x+floor[1].width) < 0) {floor[1].x = floor[0].x + floor[1].width;}
 	}
 		
 			
@@ -381,7 +381,7 @@ scene.addEventListener('activated', function(){
 	  	asset:'images/sprites.xml', 
 	  	frame: 2,
 	  	y: game.TARGET_SCREEN.height- 95,
-	  	x: 664,
+	  	x: 668,
 	  	ready: true,
 	  	z:5,
 	});

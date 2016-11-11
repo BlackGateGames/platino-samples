@@ -4,7 +4,7 @@
 <TextureAtlas imagePath="sprites.png">
     <SubTexture name="moeda_ouro" x="1284" y="1392" width="88" height="88"/>
     <SubTexture name="numero_6_mini" x="1452" y="1052" width="24" height="28"/>
-    <SubTexture name="chao" x="7" y="1032" width="670" height="224"/>
+    <SubTexture name="chao" x="7" y="1032" width="668" height="224"/>
     <SubTexture name="bt_rate" x="1284" y="1292" width="148" height="96"/>
     <SubTexture name="bt_menu" x="364" y="1404" width="160" height="56"/>
     <SubTexture name="bt_ok" x="640" y="1416" width="160" height="56"/>
